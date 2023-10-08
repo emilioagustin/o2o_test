@@ -1,7 +1,21 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+/*
+*  Protractor support is deprecated in Angular.
+*  Protractor is used in this example for compatibility with Angular documentation tools.
+*/
+import { bootstrapApplication,provideProtractorTestingSupport } from '@angular/platform-browser';
+import { provideHttpClient } from "@angular/common/http";
+import { AppComponent } from './app/app.component';
 
-import { AppModule } from './app/app.module';
-
-
-platformBrowserDynamic().bootstrapModule(AppModule)
+bootstrapApplication(AppComponent,
+    {providers: [
+      provideProtractorTestingSupport(),
+      provideHttpClient()
+    ]})
   .catch(err => console.error(err));
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

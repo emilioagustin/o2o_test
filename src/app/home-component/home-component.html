@@ -1,0 +1,9 @@
+<section class="search-bar">
+    <input type="text" ng-model="query" (keyup.enter)="updateBeers(filter.value)" placeholder="Search" #filter>
+    <button class="primary" (click)="updateBeers(filter.value)" type="button">Search</button>
+</section>
+<br>
+<div>Results: {{ beerList.length }}</div>
+<section class="results">
+    <app-beer [beer]="beer" *ngFor="let beer of beerList"></app-beer>
+</section>

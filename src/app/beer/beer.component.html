@@ -1,0 +1,5 @@
+<section class="listing">
+    <img class="listing-photo" [src]="beer.image_url" >
+    <h4 class="listing-heading">{{ beer.name }}</h4>
+    <p class="listing-description" ng-show="beer.description">{{ beer.description | slice:0:150 }}...</p>
+</section>
